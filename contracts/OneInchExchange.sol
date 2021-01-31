@@ -107,9 +107,9 @@ contract OneInchExchange is Ownable, Pausable {
         IERC20 dstToken = desc.dstToken;
 
         if (flags & _REQUIRES_EXTRA_ETH != 0) {
-            require(msg.value > (srcToken.isETH() ? desc.amount : 0), "Invalid msg.value");
+            require(msg.value > (srcToken.isETH() ? desc.amount : 0), "Invalid msg.value, more");
         } else {
-            require(msg.value == (srcToken.isETH() ? desc.amount : 0), "Invalid msg.value");
+            require(msg.value == (srcToken.isETH() ? desc.amount : 0), "Invalid msg.value, equal");
         }
 
         if (flags & _SHOULD_CLAIM != 0) {
