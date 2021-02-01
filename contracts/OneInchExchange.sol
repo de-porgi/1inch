@@ -6,7 +6,7 @@ pragma experimental ABIEncoderV2;
 import "./interfaces/IOneInchCaller.sol";
 import "https://github.com/de-porgi/aave_v2/blob/main/contracts/dependencies/openzeppelin/contracts/IERC20.sol";
 
-contract OneInchExchange {
+interface IOneInchExchange {
 
     struct SwapDescription {
         IERC20 srcToken;
