@@ -4,9 +4,9 @@ pragma solidity ^0.6.12;
 pragma experimental ABIEncoderV2;
 
 import "./interfaces/IOneInchCaller.sol";
-import "https://github.com/de-porgi/aave_v2/blob/main/contracts/dependencies/openzeppelin/contracts/Pausable.sol";
+import "https://github.com/de-porgi/aave_v2/blob/main/contracts/dependencies/openzeppelin/contracts/IERC20.sol";
 
-contract OneInchExchange is Pausable {
+contract OneInchExchange {
 
     struct SwapDescription {
         IERC20 srcToken;
@@ -28,6 +28,5 @@ contract OneInchExchange is Pausable {
     )
         external
         payable
-        whenNotPaused
         returns (uint256 returnAmount);
 }
